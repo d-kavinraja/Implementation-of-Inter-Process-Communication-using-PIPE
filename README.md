@@ -10,16 +10,12 @@ To implement interprocess communication using pipe command.
 4.	Close the read end of parent process using close() and perform write operation
 5.	Close the write end of child process and perform reading
 6.	Display the text.
-
 ```
-
 ## PROGRAM:
-
 ```c
 #include <stdio.h>
 int main()
 {
-
   int fd[2],child; char a[10];
   printf("\nEnter the string : ");
   scanf("%s",a);
@@ -30,21 +26,14 @@ int main()
     close(fd[0]);
     write(fd[1],a,5); wait(0);
 }
-
   else
-
 {
    close(fd[1]);
     read(fd[0],a,5); printf("The string received from pipe is : %s",a);
 }
-
-return 0;
 }
 ```
-
 ## OUTPUT:
 ![output](./images/ipc.png)
-
-
 ## RESULT:
 Thus the implementation of interprocess communication using pipe command is successfully executed.
